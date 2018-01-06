@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+Hi! I'm Halasi Tamás. I'm currently studying at Budapesti Eötvös József Gimnázium. I like the web and software development. You can [follow me on Twitter](https://twitter.com/trustedtomato) and [GitHub](https://github.com/trustedtomato/).
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+You can email me at [trusted.tomato@gmail.com](mailto:trusted.tomato@gmail.com)
