@@ -6,7 +6,7 @@
 name: Halasi Tamás
 
 # Short bio or description (displayed in the header)
-description: Student at Budapesti Eötvös József Gimnázium
+description: What have I done?!
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
@@ -16,7 +16,7 @@ avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/je
 #
 
 # Includes an icon in the footer for each username you enter
-footer-links:
+links:
   dribbble:
   email:
   facebook:
@@ -53,6 +53,17 @@ baseurl: ""
 # !! You don't need to change any of the configuration flags below !!
 #
 
+compress_html:
+  clippings: all
+  comments: []
+  endings: all
+  ignore:
+    envs: []
+  blanklines: false
+  profile: false
+  startings: [html, he]
+
+encoding: UTF-8
 permalink: /:title/
 
 # The release of Jekyll Now that you're using

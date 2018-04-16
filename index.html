@@ -1,18 +1,38 @@
 ---
-layout: default
+layout: headery
 ---
 
 <div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
+	{% for post in site.posts %}
+		<article class="post">
+			
+			<header>
+				<h1><a href="{{ site.baseurl }}{{ post.url }}" class="title">{{ post.title }}</a></h1>
+			</header>
+			
+			{% assign cleancontent = post.content | strip_html %}
+			{% assign length = cleancontent | size %}
+			{% if length > 770 %}
+				{% assign shortened = true %}
+				{% assign content = post.content | truncate: 500 %}
+			{% else %}
+				{% assign shortened = false %}
+				{% assign content = post.content %}
+			{% endif %}
 
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
-  {% endfor %}
+			<div class="excerpt">
+				{% if shortened %}
+				<a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More...</a>
+				{% endif %}
+				<div class="entry">
+					{{ content }}
+					<div class="tags">
+						{% for tag in post.tags%}
+						#{{tag}}
+						{% endfor%}
+					</div>
+				</div>
+			</div>
+		</article>
+	{% endfor %}
 </div>
