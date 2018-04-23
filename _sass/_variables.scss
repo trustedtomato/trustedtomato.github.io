@@ -4,8 +4,9 @@ $basefontcolor: #000;
 $titleshadow: #adf;
 
 // Font stacks
-$basefont: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$btnfont: "Source Code Pro", courier, monospace;
+$basefont: "Source Sans Pro", "Roboto", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$btnfont: "Source Code Pro", "Courier New", courier, monospace;
+$fontdisplay: swap;
 
 // Mobile breakpoints
 @mixin mobile {
