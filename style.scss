@@ -17,45 +17,46 @@ body {
 	margin-right: 8px;
 }
 
-h1, h2, h3{
-	margin: 0;
-	padding: 0;
-}
-p{
+h1, p {
 	margin: 0;
 	padding: 0;
 }
 
-.post{
-	margin-bottom: 16px;
-}
-
-.comment, .tags, nav, .read-more {
+.comment, nav, .read-more {
 	font-family: $btnfont;
 }
-.tags{
-	margin-top: 8px;
-}
-.name{
-	text-decoration: underline dotted;
-}
-nav > a{
-	background-color: #eee
+nav > a {
+	background-color: #eee;
 }
 a {
-	color: inherit;;
+	color: inherit;
 	text-decoration: none;
+}
+.entry > a, .meta > a {
+	text-decoration: underline dotted;
 }
 
 header {
 	padding-top: 8px;
+	padding-bottom: 8px;
+}
+
+.mainheader {
+	border-bottom: 2px dashed black;
 	padding-bottom: 16px;
+	margin-bottom: 16px;
+}
+
+.post {
+	margin-top: 16px;
+	margin-bottom: 16px;
 }
 
 .title {
 	position: relative;
 	z-index: 1;
 	font-family: $btnfont;
+	display: inline-block;
 	&::after {
 		display: block;
 		position: absolute;
@@ -66,32 +67,44 @@ header {
 		height: 50%;
 		content: "";
 		background-color: $titleshadow;
-		@include mobile {
+		@include small-screen {
 			width: calc(100% - 0.5em + 8px);
 		}
 	}
 }
-
-.mainheader {
-	border-bottom: 2px dashed black;
-	margin-bottom: 16px;
+.page .title::after{
+	background-color: $pagetitleshadow;
 }
 
-.read-more {
-	position: absolute;
-	display: inline-block;
-	transform-origin: top left;
-	transform: rotate(90deg) translateY(-100%);
-	margin: 0;
-	padding: 0;
+.excerpt {
+	position: relative;
 }
 
-.read-more ~ .entry {
-	margin-left: 24px;
-}
 .entry {
 	max-width: 30em;
 	& a {
 		text-decoration: underline dotted;
+	}
+}
+
+.read-more {
+	display: inline-block;
+	margin-top: 8px;
+}
+
+@include big-screen {
+	.read-more[data-vertical] {
+		position: absolute;
+		display: inline-block;
+		transform-origin: top left;
+		transform: rotate(90deg) translateY(-100%);
+		margin: 0;
+		left: 0;
+		top: 0;
+		padding: 0;
+	}
+
+	.entry[data-vertical] {
+		margin-left: 24px;
 	}
 }

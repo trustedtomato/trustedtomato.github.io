@@ -1,0 +1,32 @@
+<article class="post">
+			
+    <header>
+        <h1><a href="{{ site.baseurl }}{{ post.url }}" class="title">{{ post.title }}</a></h1>
+    </header>
+    
+    {% if post.summary == null %}
+        {% assign cleancontent = post.content | strip_html %}
+        {% assign length = cleancontent | size %}
+        {% if length > 770 %}
+            {% assign shortened = true %}
+            {% assign long = true %}
+            {% assign content = post.content | truncate: 500, "" | strip | append: "…" %}
+        {% else %}
+            {% assign content = post.content %}
+            {% assign shortened = false %}
+        {% endif %}
+    {% else %}
+        {% assign shortened = true %}
+        {% assign long = false %}
+        {% assign content = post.summary %}
+    {% endif %}
+
+    <div class="excerpt">
+        <div class="entry" {% if long %} data-vertical {% endif %}>
+            {{ content }}
+        </div>
+        {% if shortened %}
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" {% if long %} data-vertical {% endif %}>Read More…</a>
+        {% endif %}
+    </div>
+</article>
