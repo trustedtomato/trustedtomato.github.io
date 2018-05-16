@@ -22,11 +22,11 @@
     {% endif %}
 
     <div class="excerpt">
-        <div class="entry" {% if long %} data-vertical {% endif %}>
+        <p class="entry entry--shifted" {% if long %} data-vertical {% endif %}>
             {{ content }}
-        </div>
+        </p>
         {% if shortened %}
-        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" {% if long %} data-vertical {% endif %}>Read More…</a>
+        <a href="{{ site.baseurl }}{{ post.url }}" class="read-more" {% if long %} data-vertical {% endif %}>Read More...</a>
         {% endif %}
     </div>
 </article>
