@@ -1,0 +1,11 @@
+{
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "editor.indentSize": 2,
+  "editor.tabSize": 2,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "prettier.documentSelectors": ["**/*.svelte"],
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true
+}

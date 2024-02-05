@@ -1,0 +1,72 @@
+local_backend: true
+
+display_url: https://tamashalasi.com
+site_url: https://tamashalasi.com
+# logo_url: /logos/cms.png
+
+backend:
+  name: github
+  repo: trustedtomato/trustedtomato.github.io
+  use_graphq: true
+  branch: main
+  site_domain: empty-repo-tamashalasi.netlify.com
+
+media_folder: 'src/lib/images/uploads'
+
+slug:
+  encoding: 'ascii'
+  clean_accents: true
+
+collections:
+  - name: 'sections'
+    label: 'Sections'
+    files:
+      - label: 'About'
+        name: 'about'
+        file: '_content-src/sections/about.json'
+        fields:
+          - label: 'What am I doing?'
+            name: 'what_am_i_doing'
+            widget: 'markdown'
+            buttons: ['bold', 'italic', 'link']
+            editor_components: []
+          - label: 'GitHub link'
+            name: 'github_link'
+            widget: 'string'
+          - label: 'LinkedIn link'
+            name: 'linkedin_link'
+            widget: 'string'
+          - label: 'Email'
+            name: 'email'
+            widget: 'string'
+  - name: 'posts'
+    label: 'Posts'
+    label_singular: 'Post'
+    extension: 'json'
+    folder: '_content-src/posts'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - label: 'Title'
+        name: 'title'
+        widget: 'string'
+      - label: 'Publish Date'
+        name: 'date'
+        widget: 'datetime'
+        date_format: 'YYYY-MM-DD'
+        time_format: 'HH:mm'
+      - label: 'Description'
+        name: 'description'
+        widget: 'text'
+        required: false
+      - label: 'Body'
+        name: 'body'
+        widget: 'markdown'
+        editor_components: []
+      - label: 'Tags'
+        name: 'tags'
+        widget: 'list'
+        fields:
+          - label: 'Tag'
+            name: 'tag'
+            widget: 'string'

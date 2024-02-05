@@ -1,0 +1,7 @@
+{
+  "name": "sveltekit-redirect-builder",
+  "version": "1.0.2",
+  "bin": {
+    "build-sveltekit-redirects": "./build-redirects.mjs"
+  }
+}

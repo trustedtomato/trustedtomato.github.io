@@ -1,0 +1,5 @@
+{
+  "name": "import-cwd",
+  "version": "1.0.2",
+  "main": "./import-cwd.mjs"
+}

@@ -1,0 +1,7 @@
+{
+  "name": "decapcms-to-sveltekit",
+  "version": "1.0.2",
+  "bin": {
+    "decapcms-to-sveltekit": "./build-content.mjs"
+  }
+}
